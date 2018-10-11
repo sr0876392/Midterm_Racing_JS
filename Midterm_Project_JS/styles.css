@@ -1,0 +1,51 @@
+body {
+    background-image: url("pics/sky_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+#lightblock {
+    background-color: black;
+    height: 15em;
+    width: 7em;
+}
+button {
+    display:block;
+    margin-left:auto;
+    margin-right: auto; 
+}
+#red {
+    background-color: red;
+    height:7.5em;
+    border-radius: 100%;
+
+}
+#green {
+    
+    background-color: grey;
+    height:7.5em;
+    border-radius: 100%;
+}
+
+#cars {
+    position:relative;
+    margin-top:3%; 
+    background-image: url("pics/road.jpg");
+    height:340px;
+      
+}
+#cars div {
+    width: 128px;
+}
+#cars div img { 
+    display:block;
+    width:130px;
+}
+
+#finishLine img{
+    position:absolute;
+    right:0px;
+    top:0px;
+    height:340px;
+
+}
