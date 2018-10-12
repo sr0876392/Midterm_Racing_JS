@@ -42,10 +42,13 @@ button {
     width:130px;
 }
 
+
 #finishLine img{
     position:absolute;
     right:0px;
     top:0px;
     height:340px;
+   
+    
 
 }

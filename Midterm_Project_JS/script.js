@@ -1,5 +1,4 @@
-
-   var carsDiv = document.getElementById("cars");
+var carsDiv = document.getElementById("cars");
     
 const cars = [
     
@@ -21,15 +20,29 @@ function fillCarsDiv() {
     }
 }
 
+function moveCars() {
+   var finishLinePos = document.getElementById("finishLine").getBoundingClientRect();
+   console.log(finishLinePos.right)
+  // i = 0;
+   //while (finishLinePos.right){
+   //  cars[i].element.style.marginLeft = "200px"
+    // i++
+  // }
+}
 
 lights.startButton.addEventListener("click", function(){
     lights.redLight.style.backgroundColor = "grey";
     lights.greenLight.style.backgroundColor = "green";
-    
+    cars.forEach(moveCars);
+   
+   
+        
+        
+
     
     
           
     });//end on event listener
     
 
-fillCarsDiv();
+fillCarsDiv()
