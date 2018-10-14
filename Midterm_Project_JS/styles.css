@@ -27,19 +27,19 @@ button {
     border-radius: 100%;
 }
 
-#cars {
+#track {
     position:relative;
     margin-top:3%; 
     background-image: url("pics/road.jpg");
     height:340px;
       
 }
-#cars div {
+
+#cars img {
     width: 128px;
-}
-#cars div img { 
+    position: relative;
     display:block;
-    width:130px;
+    
 }
 
 

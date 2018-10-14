@@ -54,7 +54,7 @@ function fillCarsDiv() {
 lights.startButton.addEventListener("click", function(){
     lights.redLight.style.backgroundColor = "grey";
     lights.greenLight.style.backgroundColor = "green";
-    cars[1].getBoundingClientRect().left
+    
     
     
    
