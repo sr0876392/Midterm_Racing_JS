@@ -49,6 +49,21 @@ button {
     top:0px;
     height:340px;
    
-    
-
 }
+#winner{
+    position: absolute;
+    top: 10vh;
+    bottom: 10vh;
+    left: 10vw;
+    right: 10vw;
+    color: yellowgreen;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    text-align: center;
+    display: none;
+}
+#winner img{
+    width: 300px;
+    
+}
+

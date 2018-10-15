@@ -18,7 +18,7 @@ const cars = {
     moveCars: function moveAllCars() {
         var finishLineImg = document.getElementById("fLineImg");
         finishLinePos = finishLineImg.getBoundingClientRect().left;
-        var carImg = [document.getElementById('greenCar'),
+        var carImg = cars.carImg = [document.getElementById('greenCar'),
                       document.getElementById('yellowCar'),
                       document.getElementById('blackCar'),
         ];
@@ -30,7 +30,10 @@ const cars = {
         for (i = 0; i < carPositions.length; i++){
                 this.carSpeed = Math.floor(Math.random() * 15)
                 carImg[i].style.marginLeft = `${carPositions[i] + this.carSpeed}px`;
-                carPositions[i] = carPositions[i];
+                carPositions[i] += this.carSpeed;
+                if (carPositions[i] >= (finishLinePos + 30)){
+                    return i;
+                }
         };
     }
 }  
@@ -49,14 +52,28 @@ lights.startButton.addEventListener("click", function(){
     lights.redLight.style.backgroundColor = "grey";
     lights.greenLight.style.backgroundColor = "green";
     //calling moveCars and intervals in which moveCars will be called in runCars
-    cars.moveCars()
     function runCars(){
-        for (i=0; carPositions[i] < (finishLinePos + 30);){
+        var winner = cars.moveCars();
+        if (winner == undefined){
             setTimeout(runCars, 32);
-            cars.moveCars()
-        };
+        } else { 
+            var winnerSrc = cars.carImg[winner].getAttribute("src");
+            winnerPicImg.setAttribute("src", winnerSrc);
+            winnerDiv.style.display = "block";
+            
+        }
     }
     runCars();
+});
+var winnerDiv = document.getElementById('winner');
+var winnerPicImg = document.getElementById('winnerPic');
+winnerPicImg.addEventListener("click", function(){
+    winnerDiv.style.display = "none";
+    lights.redLight.style.backgroundColor = "red";
+    lights.greenLight.style.backgroundColor = "grey";
+    for (var i = 0; i < cars.carImg.length;i++ ){
+        cars.carImg[i].style.marginLeft = "0";
+    }
 });
 
 
