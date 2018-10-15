@@ -53,6 +53,7 @@ var winnerPicImg = document.getElementById('winnerPic');
 lights.startButton.addEventListener("click", function(){
     lights.redLight.style.backgroundColor = "grey";
     lights.greenLight.style.backgroundColor = "green";
+    lights.startButton.style.display = "none";
     //calling moveCars and intervals in which moveCars will be called in runCars
     function runCars(){
         var winner = cars.moveCars(); //sets winner to whatever cars.moveCars will return(i)
@@ -63,6 +64,7 @@ lights.startButton.addEventListener("click", function(){
             winnerPicImg.setAttribute("src", winnerSrc);             //inserts the source that we got into the winnerPicImg
             winnerDiv.style.display = "block";                       //makes it visible
             
+            
         }
     }
     runCars();
@@ -72,6 +74,7 @@ winnerPicImg.addEventListener("click", function(){
     winnerDiv.style.display = "none";
     lights.redLight.style.backgroundColor = "red";
     lights.greenLight.style.backgroundColor = "grey";
+    lights.startButton.style.display = "block";
     for (var i = 0; i < cars.carImg.length;i++ ){
         cars.carImg[i].style.marginLeft = "0";
     }
